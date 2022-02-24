@@ -1,6 +1,9 @@
+import { Theme } from './styles/theme'
 
 const App = (): JSX.Element => (
-  <div>Hi</div>
+  <Theme>
+    <div>Hi</div>
+  </Theme>
 )
 
 export default App

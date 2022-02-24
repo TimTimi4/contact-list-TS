@@ -24,6 +24,8 @@
         "allowSingleExtends": true
       }
     ],
+    "default-param-last": "off",
+    "@typescript-eslint/default-param-last": "off",
     "function-paren-newline": "off",
     "object-curly-newline": "off",
     "semi": [
@@ -63,9 +65,7 @@
     "react/jsx-max-props-per-line": ["error", {
       "maximum": 3
     }],
-    "react/jsx-props-no-spreading": ["error", {
-      "custom": "ignore"
-    }],
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-sort-props": ["error", {
       "ignoreCase": true
     }],
