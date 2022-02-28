@@ -1,3 +1,5 @@
+import { Dispatch } from 'redux'
+
 import {
   EDIT_CONTACT,
   GET_CONTACTS_FAILED,
@@ -5,7 +7,29 @@ import {
   GET_CONTACTS_SUCCESS,
 } from '../constants'
 
-export const getContacts = () => (dispatch: any) => {
+type Contacts = {
+  data: Contact[];
+}
+
+type Contact = {
+    id?: number,
+    name: string,
+    address: {
+      country: string,
+      city: string,
+      streetC: string,
+    },
+    phone: string,
+    company: {
+      name: string,
+      bs: string,
+    },
+    email: string,
+    username: string,
+    favorite?: boolean,
+}
+
+export const getContacts = () => (dispatch: Dispatch) => {
   dispatch({ type: GET_CONTACTS_LOADING })
   fetch('https://demo.sibers.com/users')
     .then((res) => res.json())
@@ -17,4 +41,4 @@ export const getContacts = () => (dispatch: any) => {
     })
 }
 
-export const editContact = (data: object) => ({ type: EDIT_CONTACT, data })
+export const editContact = (data: Contacts) => ({ type: EDIT_CONTACT, data })

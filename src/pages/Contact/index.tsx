@@ -5,7 +5,7 @@ import {ContactCard} from '../../components/ContactCard'
 import {Container} from '../../components/Container'
 import { RootState } from '../../store/reducers'
 
-const Contact = () => {
+const Contact = (): JSX.Element => {
   const contacts = useSelector((state: RootState) => state.contacts)
   const { id } = useParams()
   const contact = contacts.contacts.find((p: any) => p.id === Number(id))
